@@ -1,33 +1,36 @@
-// // // За допомогою prompt запитати як звуть користувача. За допомогою alert вивести "Hello, John! How are you?", де John це те, що ввів користувач. Врахувати, що користувач може натиснути cancel або нічого не ввести
-// const userMessage = prompt ('What is your name?')
-// if( userMessage ) {
-//      alert(`Hello, ${userMessage}! How are you?` )
-// }
-// else{
-//     alert("You didn't write your name")
-//  }
-// // // Розкласти по цифрах п'ятизначне число і вивести у вихідному порядку через пробіл (використовувати оператор “розподіл по модулю” %)
-// const x = prompt(`Добавьте пятизначне число сюди`)
-// const firstNumber = (Math.floor (x/10000)%10) 
+// // // // За допомогою prompt запитати як звуть користувача. За допомогою alert вивести "Hello, John! How are you?", де John це те, що ввів користувач. Врахувати, що користувач може натиснути cancel або нічого не ввести
+// // const userMessage = prompt ('What is your name?')
+// // if( userMessage ) {
+// //      alert(`Hello, ${userMessage}! How are you?` )
+// // }
+// // else{
+// //     alert("You didn't write your name")
+// //  }
+// // // // Розкласти по цифрах п'ятизначне число і вивести у вихідному порядку через пробіл (використовувати оператор “розподіл по модулю” %)
+// // const x = prompt(`Добавьте пятизначне число сюди`)
+// // const firstNumber = (Math.floor (x/10000)%10) 
 
-// const secondNumber = Math.floor(x/1000)%10
+// // const secondNumber = Math.floor(x/1000)%10
 
-// const thirdNumber = Math.floor(x/100)%10
+// // const thirdNumber = Math.floor(x/100)%10
 
-// const fourNumber = Math.floor(x/10)%10
+// // const fourNumber = Math.floor(x/10)%10
 
-// const fiveNumber = Math.floor(x/1)%10
+// // const fiveNumber = Math.floor(x/1)%10
 
-// console.log(Number.isInteger(firstNumber, secondNumber, thirdNumber, fourNumber, fiveNumber ))
-// // Створити скрипти для арифметичних дій
-const userAddFirstValue = +prompt("Enter first number")
-const userAddSecondValue = +prompt("Enter second number")
+// // console.log(Number.isInteger(firstNumber, secondNumber, thirdNumber, fourNumber, fiveNumber ))
+// Створити скрипти для арифметичних дій
+const userAddFirstValue = prompt("Enter first number").trim();
+const userAddSecondValue = prompt("Enter second number").trim();
+const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`).trim();
 
-// const userAddAction = +prompt("Enter ( * or / or + or -)")
-const userAddValue = prompt(`Enter values ​​for calculation '-', '+', '*', '/'`)
- if( isNaN(userAddFirstValue || userAddSecondValue)){
+if (
+    userAddFirstValue === "" || isNaN(userAddFirstValue) || userAddFirstValue.includes(' ') ||
+    userAddSecondValue === "" || isNaN(userAddSecondValue) || userAddSecondValue.includes(' ') ||
+    userAddValue === "" || userAddValue.includes(' '))
+ {
     alert('Please write the number!')}
-else if ( userAddValue === '-'){
+else if ( userAddValue === '-' ){
     alert(`${userAddFirstValue} - ${userAddSecondValue} = ${userAddFirstValue - userAddSecondValue}`)
 }
 else if (userAddValue === '+'){
@@ -36,31 +39,128 @@ else if (userAddValue === '+'){
 else if (userAddValue === '*'){
     alert(`${userAddFirstValue} * ${userAddSecondValue} = ${userAddFirstValue * userAddSecondValue}`)
 }
-else if (userAddValue === '/' && userAddFirstValue !== 0 && userAddSecondValue !== 0 ){
+else if (userAddValue === '/' && userAddSecondValue != 0 && userAddFirstValue != 0){
     alert(`${userAddFirstValue} / ${userAddSecondValue} = ${userAddFirstValue / userAddSecondValue}`)
 }
-else if (userAddValue === '/' && userAddFirstValue  === 0 || userAddSecondValue === 0 ) {
-    alert(`На нуль не ділиться`)} 
-
+else if (userAddValue === '/' && (userAddSecondValue == 0 || userAddFirstValue == 0)) {
+    alert(`На нуль не ділиться`)
+    
+} 
 else {
     alert (`You have not entered a value`)
 }
-// // Створити скрипт, який отримує від користувача (prompt) два значення і виводить (alert) true, якщо значення рівні, false - якщо ні
-// const number1 = prompt('Введіть перше значення')
-// const number2 = prompt('Введіть друге значення')
-// const result = number1 === number2
-// console.log(Boolean (result))
-// alert(Boolean (result))
-const x = prompt('User write text')
-const y = /^[0-9]+$/g
 
-if (y.test(x)!==""){
-    alert('Юзер вводит текст')}
-else {
-    alert('Юзер вводит пустую строку')
-}
+// // // Створити скрипт, який отримує від користувача (prompt) два значення і виводить (alert) true, якщо значення рівні, false - якщо ні
+// // const number1 = prompt('Введіть перше значення')
+// // const number2 = prompt('Введіть друге значення')
+// // const result = number1 === number2
+// // console.log(Boolean (result))
+// // alert(Boolean (result))
+// const x = prompt('User write text')
+// const y = /^[0-9]+$/g
+
+// if (y.test(x)!==""){
+//     alert('Юзер вводит текст')}
+// else {
+//     alert('Юзер вводит пустую строку')
+// }
 
 
 
-// const i = 'asdasd1'
-// console.log(isNaN(i))
+// // const i = 'asdasd1'
+// // console.log(isNaN(i))
+// const x = prompt('Вводите пробел')
+// const y = prompt('Не вводите пробел')
+// if( x && y !== " "){
+//     console.log('Ok')
+// }
+// else if(false){
+//     console.log(Boolean)
+// }
+// else{
+//     console.log('Не правильно')
+// }
+// const x = prompt('Лише цифри')
+// if(x !==" " ){
+//     console.log('Cработало')
+// }
+// else if ( x===" "){
+//     console.log('Не Cработало')
+// }
+// else{
+//     console.log('НИЧЕГО')
+// }
+// const x = " "=== 1
+// " "=== 1
+// console.log(Boolean(1=== 1))
+// const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`);
+// const userAddFirstValue = prompt('Enter the first number');
+// const userAddSecondValue = prompt('Enter the second number');
+
+// if (
+//   isNaN(userAddFirstValue) ||
+//   isNaN(userAddSecondValue) ||
+//   userAddFirstValue === "" ||
+//   userAddSecondValue === "" ||
+//   userAddFirstValue.includes(" ") ||
+//   userAddSecondValue.includes(" ")
+// ) {
+//   alert('Please enter valid numbers without spaces!');
+// } else if (userAddValue === '-') {
+//   alert(`${userAddFirstValue} - ${userAddSecondValue} = ${userAddFirstValue - userAddSecondValue}`);
+// } else if (userAddValue === '+') {
+//   alert(`${userAddFirstValue} + ${userAddSecondValue} = ${Number(userAddFirstValue) + Number(userAddSecondValue)}`);
+// } else if (userAddValue === '*') {
+//   alert(`${userAddFirstValue} * ${userAddSecondValue} = ${userAddFirstValue * userAddSecondValue}`);
+// } else if (userAddValue === '/' && userAddSecondValue != 0) {
+//   alert(`${userAddFirstValue} / ${userAddSecondValue} = ${userAddFirstValue / userAddSecondValue}`);
+// } else if (userAddValue === '/' && userAddSecondValue == 0) {
+//   alert(`Cannot divide by zero`);
+// } else {
+//   alert(`You have not entered a valid operator`);
+// }
+// const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`);
+// const userAddFirstValue = prompt('Enter the first number');
+// const userAddSecondValue = prompt('Enter the second number');
+
+// // Regular expression to check if the input is a valid number
+// const isNumber = /^\d+$/;
+
+// if (
+//   !isNumber.test(userAddFirstValue) ||
+//   !isNumber.test(userAddSecondValue)
+// ) {
+//   alert('Please enter valid numbers!');
+// } else if (userAddValue === '-') {
+//   alert(`${userAddFirstValue} - ${userAddSecondValue} = ${userAddFirstValue - userAddSecondValue}`);
+// } else if (userAddValue === '+') {
+//   alert(`${userAddFirstValue} + ${userAddSecondValue} = ${Number(userAddFirstValue) + Number(userAddSecondValue)}`);
+// } else if (userAddValue === '*') {
+//   alert(`${userAddFirstValue} * ${userAddSecondValue} = ${userAddFirstValue * userAddSecondValue}`);
+// } else if (userAddValue === '/' && userAddSecondValue != 0) {
+//   alert(`${userAddFirstValue} / ${userAddSecondValue} = ${userAddFirstValue / userAddSecondValue}`);
+// } else if (userAddValue === '/' && userAddSecondValue == 0) {
+//   alert(`Cannot divide by zero`);
+// } else {
+//   alert(`You have not entered a valid operator`);
+// }
+// const userAddFirstValue = +prompt("Enter the first number").trim();
+// const userAddSecondValue = +prompt("Enter the second number").trim();
+// const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`).trim();
+
+// // Проста перевірка на наявність пробілів та введення значень
+// if (!userAddFirstValue || !userAddSecondValue || !userAddValue) {
+//   alert("Please enter valid numbers without spaces!");
+// } else if (userAddValue === '-') {
+//   alert(`${userAddFirstValue} - ${userAddSecondValue} = ${userAddFirstValue - userAddSecondValue}`);
+// } else if (userAddValue === '+') {
+//   alert(`${userAddFirstValue} + ${userAddSecondValue} = ${userAddFirstValue + userAddSecondValue}`);
+// } else if (userAddValue === '*') {
+//   alert(`${userAddFirstValue} * ${userAddSecondValue} = ${userAddFirstValue * userAddSecondValue}`);
+// } else if (userAddValue === '/' && userAddSecondValue !== 0 && userAddFirstValue !== 0) {
+//   alert(`${userAddFirstValue} / ${userAddSecondValue} = ${userAddFirstValue / userAddSecondValue}`);
+// } else if (userAddValue === '/' && (userAddSecondValue === 0 || userAddFirstValue === 0)) {
+//   alert(`Cannot divide by zero (both numbers cannot be zero)`);
+// } else {
+//   alert(`You have not entered a valid operator`);
+// }
