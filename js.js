@@ -1,93 +1,100 @@
-// // За допомогою prompt запитати як звуть користувача. За допомогою alert вивести "Hello, John! How are you?", де John це те, що ввів користувач. Врахувати, що користувач може натиснути cancel або нічого не ввести
-const userMessage = prompt ('What is your name?')
-if( userMessage ) {
-     alert(`Hello, ${userMessage}! How are you?` )
+
+// За допомогою prompt запитати як звуть користувача. За допомогою alert вивести "Hello, John! How are you?", де John це те, що ввів користувач. Врахувати, що користувач може натиснути cancel або нічого не ввести
+const userMessage = prompt('What is your name?');
+
+// Перевірка, чи введене ім'я складається тільки з літер
+if (!isNaN(userMessage)) {
+  alert("Введіть будь ласка правильне ім'я");
+} else {
+  alert(`Hello, ${userMessage}! How are you?`);
 }
-else{
-    alert("You didn't write your name")
- }
-// // Розкласти по цифрах п'ятизначне число і вивести у вихідному порядку через пробіл (використовувати оператор “розподіл по модулю” %)
-const x = prompt(`Добавьте пятизначне число сюди`)
-const firstNumber = (Math.floor (x/10000)%10) 
 
-const secondNumber = Math.floor(x/1000)%10
+ 
+// Розкласти по цифрах п'ятизначне число і вивести у вихідному порядку через пробіл (використовувати оператор “розподіл по модулю” %)
+const user5numbers = prompt('Введіть сюди пятизначне число');
+const number = 5;
 
-const thirdNumber = Math.floor(x/100)%10
+if (user5numbers === null) {
+  console.log('Ви вийшли с заповнення.');
+} else {
+  if (Number.isInteger(+user5numbers.trim()) && String(Math.abs(user5numbers.trim())).length === number) {
+    const firstNumber = Math.floor(user5numbers.trim() / 10000) % 10;
+    const secondNumber = Math.floor(user5numbers.trim() / 1000) % 10;
+    const thirdNumber = Math.floor(user5numbers.trim() / 100) % 10;
+    const fourNumber = Math.floor(user5numbers.trim() / 10) % 10;
+    const fiveNumber = Math.floor(user5numbers.trim() / 1) % 10;
 
-const fourNumber = Math.floor(x/10)%10
+    console.log(`${firstNumber} ${secondNumber} ${thirdNumber} ${fourNumber} ${fiveNumber}`);
+  } else if (user5numbers.trim() === "" || isNaN(+user5numbers.trim()) || +user5numbers.trim() <= 5 || user5numbers.trim() !== 0) {
+    console.log('Не вірно ввели код.');
+  } 
+}
 
-const fiveNumber = Math.floor(x/1)%10
-
-console.log(Number.isInteger(firstNumber, secondNumber, thirdNumber, fourNumber, fiveNumber ))
 // Створити скрипти для арифметичних дій
-const userAddFirstValue = prompt("Enter first number").trim();
-const userAddSecondValue = prompt("Enter second number").trim();
-const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`).trim();
+const userAddFirstValue = prompt("Enter first number");
+const userAddSecondValue = prompt("Enter second number");
+const userAddValue = prompt(`Enter values for calculation '-', '+', '*', '/'`);
 
-if (
-    userAddFirstValue === "" || isNaN(userAddFirstValue) || userAddFirstValue.includes(' ') ||
-    userAddSecondValue === "" || isNaN(userAddSecondValue) || userAddSecondValue.includes(' ') ||
-    userAddValue === "" || userAddValue.includes(' '))
- {
-    alert('Please write the number!')}
-else if ( userAddValue === '-' ){
-    alert(`${userAddFirstValue} - ${userAddSecondValue} = ${userAddFirstValue - userAddSecondValue}`)
-}
-else if (userAddValue === '+'){
-    alert(`${userAddFirstValue} + ${userAddSecondValue} = ${userAddFirstValue + userAddSecondValue}`)
-}
-else if (userAddValue === '*'){
-    alert(`${userAddFirstValue} * ${userAddSecondValue} = ${userAddFirstValue * userAddSecondValue}`)
-}
-else if (userAddValue === '/' && userAddSecondValue != 0 && userAddFirstValue != 0){
-    alert(`${userAddFirstValue} / ${userAddSecondValue} = ${userAddFirstValue / userAddSecondValue}`)
-}
-else if (userAddValue === '/' && (userAddSecondValue == 0 || userAddFirstValue == 0)) {
-    alert(`На нуль не ділиться`)
-    
+if (userAddFirstValue === null || userAddSecondValue === null || userAddValue === null) {
+    alert('Операцію відмінено.');
 } 
 else {
-    alert (`You have not entered a value`)
-}
+    const num1 = +userAddFirstValue;
+    const num2 = +userAddSecondValue;
 
+    if (
+        userAddFirstValue.trim() === "" || isNaN(num1) ||
+        userAddSecondValue.trim() === "" || isNaN(num2) ||
+        userAddValue.trim() === ""
+    ) {
+        alert('Будь ласка, напишіть правильний код!');
+    } else {
+        if (userAddValue === '-') {
+            alert(`${num1} - ${num2} = ${num1 - num2}`);
+        } else if (userAddValue === '+') {
+            alert(`${num1} + ${num2} = ${num1 + num2}`);
+        } else if (userAddValue === '*') {
+            alert(`${num1} * ${num2} = ${num1 * num2}`);
+        } else if (userAddValue === '/') {
+            if (num2 === 0 || num1 === 0) {
+                alert('Ділення на 0 неможливе.');
+            } else {
+                alert(`${num1} / ${num2} = ${num1 / num2}`);
+            }
+        } 
+        }
+    }
 // Створити скрипт, який отримує від користувача (prompt) два значення і виводить (alert) true, якщо значення рівні, false - якщо ні
 const number1 = prompt('Введіть перше значення')
 const number2 = prompt('Введіть друге значення')
 const result = number1 === number2
-console.log(Boolean (result))
-alert(Boolean (result))
-// const x = prompt('User write text')
-// const y = /^[0-9]+$/g
-
-// if (y.test(x)!==""){
-//     alert('Юзер вводит текст')}
-// else {
-//     alert('Юзер вводит пустую строку')
-// }
+console.log(result)
+alert((result))
 
 
 
-// // const i = 'asdasd1'
-// // console.log(isNaN(i))
-// const x = prompt('Вводите пробел')
-// const y = prompt('Не вводите пробел')
-// if( x && y !== " "){
-//     console.log('Ok')
-// }
-// else if(false){
-//     console.log(Boolean)
-// }
-// else{
-//     console.log('Не правильно')
-// }
-// const x = prompt('Лише цифри')
-// if(x !==" " ){
-//     console.log('Cработало')
-// }
-// else if ( x===" "){
-//     console.log('Не Cработало')
-// }
-// else{
-//     console.log('НИЧЕГО')
-// }
 
+
+
+
+
+
+
+
+
+
+// // Створити скрипт, який отримує від користувача (prompt) два значення і виводить (alert) true, якщо значення рівні, false - якщо ні
+// // const number1 = prompt('Введіть перше значення')
+// // const number2 = prompt('Введіть друге значення')
+// // const result = number1 === number2
+// // console.log(Boolean (result))
+// // alert(Boolean (result))
+// // alert(Boolean (result))
+
+
+
+
+
+
+
+ 
